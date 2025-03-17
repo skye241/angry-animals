@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnru2hilcnpvm"]
+[gd_scene load_steps=3 format=3 uid="uid://bnru2hilcnpvm"]
 
 [ext_resource type="Texture2D" uid="uid://bqi5drjklqnu7" path="res://assets/scene/colored_castle.png" id="1_myc1q"]
+[ext_resource type="PackedScene" uid="uid://b6cl37ix8p0wf" path="res://scenes/animal/animal.tscn" id="2_u6jkd"]
 
 [node name="LevelBase" type="Node2D"]
 
@@ -8,3 +9,6 @@
 position = Vector2(571, 261)
 scale = Vector2(1.11719, 1.06488)
 texture = ExtResource("1_myc1q")
+
+[node name="Animal" parent="." instance=ExtResource("2_u6jkd")]
+position = Vector2(89, 88)
