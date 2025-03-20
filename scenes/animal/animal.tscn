@@ -16,7 +16,7 @@ radius = 19.4165
 [node name="Animal" type="RigidBody2D"]
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_4tqkp")
-freeze_mode = 1
+freeze = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_4tqkp")
@@ -28,11 +28,12 @@ texture = ExtResource("1_428fe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jp7rm")
 
-[node name="Label" type="Label" parent="."]
-offset_left = -19.0
-offset_top = -60.0
-offset_right = 21.0
-offset_bottom = -37.0
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -88.0
+offset_right = 29.0
+offset_bottom = -65.0
+theme_override_colors/font_color = Color(0.894118, 0, 0, 1)
 text = "Parrot"
 
 [node name="Arrow" type="Sprite2D" parent="."]
@@ -51,5 +52,7 @@ stream = ExtResource("5_ic6m2")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_screen_exited"]
