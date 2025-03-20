@@ -36,7 +36,7 @@ func setup() -> void:
 	arrow.hide()
 	_start = position
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	update_state()
 	update_debug_label()
 
@@ -118,7 +118,7 @@ func change_state(new_state: AnimalState) -> void:
 
 #region signals
 	
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("drag") and _state == AnimalState.Ready:
 		change_state(AnimalState.Drag)
 
